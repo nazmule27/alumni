@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2016 at 04:56 AM
+-- Generation Time: Jan 17, 2016 at 05:00 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -20,21 +20,6 @@ SET time_zone = "+00:00";
 -- Database: `alumni`
 --
 
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_users`()
-BEGIN
-        INSERT INTO users(username, PASSWORD)
-        SELECT student_id, SUBSTRING(SHA1(RAND()) FROM 2 FOR 7) AS PASSWORD FROM students WHERE student_id NOT IN (SELECT username FROM users);
-        UPDATE students SET u_university_admission_year= CONVERT(CONCAT(19,SUBSTR(student_id,1,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND CONVERT(SUBSTR(student_id,1,2), SIGNED INTEGER)>80;
-	UPDATE students SET u_university_admission_year= CONVERT(CONCAT(20,SUBSTR(student_id,1,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND CONVERT(SUBSTR(student_id,1,2), SIGNED INTEGER)<80;
-    END$$
-
-DELIMITER ;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `alumni_events`
@@ -1512,7 +1497,8 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('9905061', 'A.K.M. Bodrul Qadir', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905062', 'Sunil Mishra', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905063', 'Masidur Rahaman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('headcse', 'Dr. Mohammad Mahfuzul Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
+('headcse', 'Dr. Mohammad Mahfuzul Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('nazmul', 'Nazmul Haque', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2819,7 +2805,8 @@ INSERT INTO `users` (`username`, `password`, `created_at`, `updated_at`, `role`)
 ('9905061', 'a560608', '2016-01-04 05:34:37', '0000-00-00 00:00:00', 'user'),
 ('9905062', 'a0ddf2f', '2016-01-04 05:34:37', '0000-00-00 00:00:00', 'user'),
 ('9905063', '6b06f6e', '2016-01-04 05:34:37', '0000-00-00 00:00:00', 'user'),
-('headcse', 'headcse', '2015-11-03 10:20:18', '0000-00-00 00:00:00', 'admin');
+('headcse', 'headcse', '2015-11-03 10:20:18', '0000-00-00 00:00:00', 'admin'),
+('nazmul', 'nazmul321', '2015-11-03 10:20:18', '0000-00-00 00:00:00', 'admin');
 
 --
 -- Constraints for dumped tables
@@ -2858,3 +2845,20 @@ ALTER TABLE `users`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_users`()
+BEGIN
+        INSERT INTO users(username, PASSWORD)
+        SELECT student_id, SUBSTRING(SHA1(RAND()) FROM 2 FOR 7) AS PASSWORD FROM students WHERE student_id NOT IN (SELECT username FROM users);
+        UPDATE students SET u_university_admission_year= CONVERT(CONCAT(19,SUBSTR(student_id,1,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND CONVERT(SUBSTR(student_id,1,2), SIGNED INTEGER)>80;
+	UPDATE students SET u_university_admission_year= CONVERT(CONCAT(20,SUBSTR(student_id,1,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND CONVERT(SUBSTR(student_id,1,2), SIGNED INTEGER)<80;
+    END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
