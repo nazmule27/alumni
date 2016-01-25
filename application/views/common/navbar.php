@@ -21,7 +21,7 @@ $username = $CI->session->userdata('username');
                         <a href="javascript:void(0)"><i class="glyphicon glyphicon-education"></i> Alumni</a>
                         <ul>
                             <li><a href="<?=base_url();?>undergrad_alumni">Undergraduate</a></li>
-                            <!--<li><a href="<?/*=base_url();*/?>postgrad_alumni">Post Graduate</a></li>-->
+                            <li><a href="<?=base_url();?>postgrad_alumni">Post Graduate</a></li>
                             <li><a href="<?=base_url();?>news">Alumni News</a></li>
                             <li><a href="<?=base_url();?>events">Alumni Events</a></li>
                         </ul>

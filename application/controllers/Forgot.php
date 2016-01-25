@@ -44,7 +44,7 @@ class Forgot extends CI_Controller
         $name = 'Alumni- CSE, BUET';
         $from_email = 'alumni.cse.buet@gmail.com';
         $subject = 'Forgot Password';
-        $link='<a href="http://localhost/alumni/login">alumni login</a>';
+        $link='<a href="http://172.16.101.5/alumni/login">alumni login</a>';
         $message = 'Dear User, <br> Your User ID: '.$user_id.' and password: '.$password.'<br>For signin go to '.$link;
 
         //set to_email id to which you want to receive mails

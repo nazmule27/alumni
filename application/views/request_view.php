@@ -14,7 +14,7 @@ $this->load->view('common/header');
                         <input type="text" name="name" id="name" class="form-control custom-text" placeholder="Your name *" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <input type="text" name="student_id" id="student_id" class="form-control custom-text" maxlength="7" placeholder="Your buet student id *" required>
+                        <input type="text" name="student_id" id="student_id" class="form-control custom-text" maxlength="10" placeholder="Your buet student id *" required>
                     </div>
                     <div class="form-group col-md-12">
                         <input type="email" name="email" id="email" class="form-control custom-text" placeholder="Give your email to get password *" required>
