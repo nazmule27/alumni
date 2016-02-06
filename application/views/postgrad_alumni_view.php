@@ -5,7 +5,7 @@ $this->load->view('common/navbar');
 <div class="container paddingT75" id="u_a">
     <div class="row">
         <div class="col-lg-12">
-            <h3>Alumni students</h3>
+            <h3>Postgraduate Alumni Students</h3>
             <div class="pad10"><div
                 <div class="row">
                     <form method="post" action="<?=base_url();?>postgrad_alumni/alumniByPassingYear">

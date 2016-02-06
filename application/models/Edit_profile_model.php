@@ -10,7 +10,7 @@ class Edit_profile_model extends CI_Model
     }
 
     public function verify_password($sid, $pass) {
-        $this->db->select('id');
+        $this->db->select('username');
         $this->db->from('users');
         $this->db->where('username',$sid);
         //$this->db->where('password',md5($pass));
