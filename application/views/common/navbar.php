@@ -29,9 +29,9 @@ $username = $CI->session->userdata('username');
                     <li>
                         <a href="<?=base_url();?>photo_gallery"><i class="glyphicon glyphicon-picture"></i> Photo Gallery</a>
                     </li>
-                    <li>
-                        <a href="<?=base_url();?>alumni_blog"><i class="glyphicon glyphicon-edit"></i> Alumni Blog</a>
-                    </li>
+                    <!--<li>
+                        <a href="<?/*=base_url();*/?>alumni_blog"><i class="glyphicon glyphicon-edit"></i> Alumni Blog</a>
+                    </li>-->
                     <li>
                         <a href="<?=base_url();?>contact"><i class="glyphicon glyphicon-envelope"></i> Contact</a>
                         <!--<ul>
@@ -40,10 +40,8 @@ $username = $CI->session->userdata('username');
                     </li>
                     <?php if(($role == 'user')||($role == 'admin')){?>
                     <li>
-                        <a href="<?=base_url();?>edit_profile"><i class="glyphicon glyphicon-user"></i> <i class="welcome">Welcome</i> <?php echo $username; ?></a>
+                        <a href="<?=base_url();?>view_profile"><i class="glyphicon glyphicon-user"></i> <i class="welcome">Welcome</i> <?php echo $username; ?></a>
                         <ul>
-                            <li><a href="<?=base_url();?>edit_profile">Edit Profile</a></li>
-                            <li><a href="<?=base_url();?>view_profile">View Profile</a></li>
                             <li><a href="<?=base_url();?>post_news">Post News</a></li>
                             <li><a href="<?=base_url();?>post_event">Post Event</a></li>
                             <?php if($role == 'admin'){?>

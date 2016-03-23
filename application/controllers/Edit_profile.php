@@ -248,8 +248,10 @@ class Edit_profile extends CI_Controller
             $student_id = $CI->session->userdata('username');
             $upload_data = $this->upload->data();
             $success_msg_con='<div class="alert alert-success text-center">Your photograph  was successfully uploaded!<a class="close" title="close" aria-label="close" data-dismiss="alert" href="#">×</a></div>';
-            $data = array('success_msg' => $success_msg_con, 's_photograph'=>$student_id);
-            $this->load->view('edit_profile_photograph_view', $data);
+            //$data = array('success_msg' => $success_msg_con, 's_photograph'=>$student_id);
+            $this->session->set_flashdata('success_msg_pho', '<div class="alert alert-success text-center">Your photograph  was successfully uploaded!<a class="close" title="close" aria-label="close" data-dismiss="alert" href="#">×</a></div>');
+            //$this->load->view('edit_profile_photograph_view', $data);
+            redirect('edit_profile/photograph');
         }
     }
 

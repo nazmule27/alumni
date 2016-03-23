@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 24, 2016 at 09:45 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Feb 27, 2016 at 10:56 AM
+-- Server version: 5.5.47-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `alumni`
 --
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `alumni_events`
@@ -49,7 +51,14 @@ CREATE TABLE IF NOT EXISTS `alumni_news` (
   `status` varchar(10) NOT NULL DEFAULT 'active',
   PRIMARY KEY (`id`),
   KEY `fk_user_news` (`published_by`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `alumni_news`
+--
+
+INSERT INTO `alumni_news` (`id`, `heading`, `file_name`, `published_date`, `published_by`, `status`) VALUES
+(1, 'Alumni Application Proclaims by CSE, BUET', 'Alumni_Application_Proclaims1.pdf', '2016-02-20 00:00:00', '0905002', 'active');
 
 -- --------------------------------------------------------
 
@@ -148,7 +157,14 @@ CREATE TABLE IF NOT EXISTS `photo_gallery` (
   `upload_by` varchar(7) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_user_photo_g` (`upload_by`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `photo_gallery`
+--
+
+INSERT INTO `photo_gallery` (`id`, `photo_name`, `caption`, `upload_time`, `upload_by`) VALUES
+(1, 'cse_convoc_eme_front.jpg', 'test', '2016-02-20 06:00:51', '0412054');
 
 -- --------------------------------------------------------
 
@@ -773,7 +789,7 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('0412052027', 'Fatema Tuz Zohora', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 2012, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0412052051', 'Johra Muhammad Moosa', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 2012, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0412052066', 'Md. Jahidul Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 2012, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0412054001', 'Md. Iqbal Hossain', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 2012, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('0412054001', 'Md. Iqbal Hossain', '', '', 'enggiqbal@gmail.com', '8123', 1, 'Male', '1992-02-04', 44, 1, 'Kolabazer United High School', 'Jhenidah', 1997, 'Govt. K.C College ', 'Jhenidah', 1999, 'Rajshahi University of Engineering and Technology', 'Rajshahi ', 'Computer Science and Engineering', 2000, 0, 2005, NULL, 'Bangladesh University of Engineering and Technology', 'Dhaka', 'Computer Science and Engineering', 2007, 0, 2010, 'Bangladesh University of Engineering and Technology', 'Dhaka', 'Computer Science and Engineering', 2012, 0, 2015, 'System Analyst', 'BUET', 'CSE, BUET', 'I completed my PhD from CSE, BUET. Now I am working as an System Analyst in BUET.'),
 ('0413052031', 'Nagib Meshkat', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 2013, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0505001', 'Muntasir Mashuq', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0505002', 'Shariful Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
@@ -820,10 +836,10 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('0505044', 'Tanjida Kabir', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0505045', 'Md. Shamiul Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0505046', 'Sourabh Aryabhatta', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0505047', 'Md. Habibur Rahman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0505048', 'Md. Samsil Arefin', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0505049', 'Moinul Morshed Porag Chowdhury', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
+('0505047', 'Md. Habibur Rahman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`, `email`, `mobile`, `mobile_yn`, `gender`, `birth_date`, `district`, `district_yn`, `high_school_name`, `high_school_location`, `high_school_passing_year`, `college_name`, `college_location`, `college_passing_year`, `u_university_name`, `u_university_location`, `u_university_subject`, `u_university_admission_year`, `u_university_a_year_privateyn`, `u_university_passing_year`, `u_cgpa`, `p_university_name`, `p_university_location`, `p_university_subject`, `p_university_admission_year`, `p_university_a_year_privateyn`, `p_university_passing_year`, `d_university_name`, `d_university_location`, `d_university_subject`, `d_university_admission_year`, `d_university_a_year_privateyn`, `d_university_passing_year`, `designation`, `organization`, `location`, `biography`) VALUES
+('0505048', 'Md. Samsil Arefin', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('0505049', 'Moinul Morshed Porag Chowdhury', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0505050', 'Md. Rakibul Hasan', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0505051', 'Tonmoy Guha Roy', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0505052', 'Samiul Alam Anik', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2005, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
@@ -1026,10 +1042,10 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('0705022', 'Sayeed Salam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0705023', 'Abu Reyan Ahmed', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0705024', 'Samin Yasar', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0705025', 'Md. Nazmul Hasan', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0705026', 'Mir Md. Faysal', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0705027', 'Md. Rousonur Jaman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
+('0705025', 'Md. Nazmul Hasan', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`, `email`, `mobile`, `mobile_yn`, `gender`, `birth_date`, `district`, `district_yn`, `high_school_name`, `high_school_location`, `high_school_passing_year`, `college_name`, `college_location`, `college_passing_year`, `u_university_name`, `u_university_location`, `u_university_subject`, `u_university_admission_year`, `u_university_a_year_privateyn`, `u_university_passing_year`, `u_cgpa`, `p_university_name`, `p_university_location`, `p_university_subject`, `p_university_admission_year`, `p_university_a_year_privateyn`, `p_university_passing_year`, `d_university_name`, `d_university_location`, `d_university_subject`, `d_university_admission_year`, `d_university_a_year_privateyn`, `d_university_passing_year`, `designation`, `organization`, `location`, `biography`) VALUES
+('0705026', 'Mir Md. Faysal', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('0705027', 'Md. Rousonur Jaman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0705028', 'Md Mhafuzul Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0705030', 'Tanvir Mahmudul Hasan', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0705031', 'Md. Reaz Murshed Masud', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2007, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
@@ -1221,8 +1237,8 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('0805117', 'Amranul Islam Chowdhury', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2008, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0805118', 'Sajedul Karim Talukder', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2008, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0805119', 'Md. Main Uddin Rony', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2008, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0905001', 'Md. Tarikul Islam Papon', 'Md. Zahurul Islam', 'Nasima Islam', NULL, NULL, 1, NULL, '1992-11-24', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0905002', 'Md. Taksir Hasan Majumder', 'Late Md. Ali Hossain Majumder', 'Kushiara Begum', NULL, NULL, 1, NULL, '1991-06-06', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('0905001', 'Md. Tarikul Islam Papon', 'Md. Zahurul Islam', 'Nasima Islam', 'nlnazmul@gmail.com', NULL, 1, NULL, '1992-11-24', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('0905002', 'Md. Taksir Hasan Majumder', 'Late Md. Ali Hossain Majumder', 'Kushiara Begum', 'nlnazmul@gmail.com', NULL, 1, NULL, '1991-06-06', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905003', 'Md. Muntakim Sadik', 'M. Kamal Uddin Ahmed', 'Monzuara Begum', NULL, NULL, 1, NULL, '1992-11-10', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905004', 'Naimul Arif', 'Md. Nurul Anam', 'Nazma Jahan', NULL, NULL, 1, NULL, '1992-10-23', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905005', 'Minhajul Bashir', 'Md. Bashir Ullah', 'Halima Begum', NULL, NULL, 1, NULL, '1992-07-19', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
@@ -1230,10 +1246,10 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('0905007', 'Mainuddin Ahmad Jonas', 'Nooruddin Ahmad', 'Shamim Akhtar', NULL, NULL, 1, NULL, '1992-07-21', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905008', 'Muhammad Hussain Mahdi', 'Muhammad Mizanur Rahman', 'Sayema Imam', NULL, NULL, 1, NULL, '1992-12-10', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905009', 'Maruf Hasan Zaber', 'Mohammed Hazrat Ali', 'Raisa Sultana', NULL, NULL, 1, NULL, '1992-04-05', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0905010', 'Md. Samiul Saeef', 'Md. Abdul Azim', 'Shahin Azim', NULL, NULL, 1, NULL, '1991-10-06', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0905011', 'Raju Ahmed Shetu', 'Md. Lutfor Rahman', 'Shirin Sultana', NULL, NULL, 1, NULL, '1991-01-10', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('0905012', 'Mahmud Al-Noor Tareq', 'A. K. M. Fazlul Haque', 'Fatema Haque', NULL, NULL, 1, NULL, '1991-01-20', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
+('0905010', 'Md. Samiul Saeef', 'Md. Abdul Azim', 'Shahin Azim', NULL, NULL, 1, NULL, '1991-10-06', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`, `email`, `mobile`, `mobile_yn`, `gender`, `birth_date`, `district`, `district_yn`, `high_school_name`, `high_school_location`, `high_school_passing_year`, `college_name`, `college_location`, `college_passing_year`, `u_university_name`, `u_university_location`, `u_university_subject`, `u_university_admission_year`, `u_university_a_year_privateyn`, `u_university_passing_year`, `u_cgpa`, `p_university_name`, `p_university_location`, `p_university_subject`, `p_university_admission_year`, `p_university_a_year_privateyn`, `p_university_passing_year`, `d_university_name`, `d_university_location`, `d_university_subject`, `d_university_admission_year`, `d_university_a_year_privateyn`, `d_university_passing_year`, `designation`, `organization`, `location`, `biography`) VALUES
+('0905011', 'Raju Ahmed Shetu', 'Md. Lutfor Rahman', 'Shirin Sultana', NULL, NULL, 1, NULL, '1991-01-10', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('0905012', 'Mahmud Al-Noor Tareq', 'A. K. M. Fazlul Haque', 'Fatema Haque', NULL, NULL, 1, NULL, '1991-01-20', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905013', 'Ishtiyaque Ahmad', 'Md. Azizur Rahman', 'Nighat Sultana', NULL, NULL, 1, NULL, '1991-06-01', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905014', 'Mainul Kabir', 'Sibbir Ahmed', 'Delowara Begum', NULL, NULL, 1, NULL, '1992-02-01', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('0905015', 'Shakibul Islam', 'A. K. M. Shamsuddin', 'Shahana Akther', NULL, NULL, 1, NULL, '1992-09-05', 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2009, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
@@ -1421,11 +1437,11 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('9805034', 'Md. Kamrul Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9805036', 'Md. Mahfujur Rahman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9805037', 'Kazi Iftekher Kashem', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('9805038', 'Arbab-Ur-Rahman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('9805038', 'Arbab-Ur-Rahman', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`, `email`, `mobile`, `mobile_yn`, `gender`, `birth_date`, `district`, `district_yn`, `high_school_name`, `high_school_location`, `high_school_passing_year`, `college_name`, `college_location`, `college_passing_year`, `u_university_name`, `u_university_location`, `u_university_subject`, `u_university_admission_year`, `u_university_a_year_privateyn`, `u_university_passing_year`, `u_cgpa`, `p_university_name`, `p_university_location`, `p_university_subject`, `p_university_admission_year`, `p_university_a_year_privateyn`, `p_university_passing_year`, `d_university_name`, `d_university_location`, `d_university_subject`, `d_university_admission_year`, `d_university_a_year_privateyn`, `d_university_passing_year`, `designation`, `organization`, `location`, `biography`) VALUES
 ('9805039', 'Karishma Muntashir', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9805040', 'Amran Parvez', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('9805041', 'Md. Shakhawat Hossain Siddiqee', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`, `email`, `mobile`, `mobile_yn`, `gender`, `birth_date`, `district`, `district_yn`, `high_school_name`, `high_school_location`, `high_school_passing_year`, `college_name`, `college_location`, `college_passing_year`, `u_university_name`, `u_university_location`, `u_university_subject`, `u_university_admission_year`, `u_university_a_year_privateyn`, `u_university_passing_year`, `u_cgpa`, `p_university_name`, `p_university_location`, `p_university_subject`, `p_university_admission_year`, `p_university_a_year_privateyn`, `p_university_passing_year`, `d_university_name`, `d_university_location`, `d_university_subject`, `d_university_admission_year`, `d_university_a_year_privateyn`, `d_university_passing_year`, `designation`, `organization`, `location`, `biography`) VALUES
+('9805041', 'Md. Shakhawat Hossain Siddiqee', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9805042', 'Mohammad Gias Uddin', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9805043', 'Indranil Palit', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9805044', 'Mehedi Bakht', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1998, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
@@ -1499,15 +1515,15 @@ INSERT INTO `students` (`student_id`, `full_name`, `father_name`, `mother_name`,
 ('9905052', 'Md. Farhadur Reza', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905053', 'Md. Akter Faruq', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905054', 'Md. Iqbal Mahmood', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('9905055', 'Md. Shahnath Ullah', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('9905055', 'Md. Shahnath Ullah', NULL, NULL, '', NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905056', 'Khandaker Saad Farabi', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905057', 'Masud Ahmed', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905058', 'Muhammad Abdullah-Al-Bakki', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905059', 'Md. Borhan Uddin', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 4, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('9905060', 'Li Li Ping', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('9905060', 'Li Li Ping', NULL, NULL, '', NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('9905061', 'A.K.M. Bodrul Qadir', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('9905062', 'Sunil Mishra', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
-('9905063', 'Masidur Rahaman', NULL, NULL, 'nlnazmul@gmail.com', NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('9905062', 'Sunil Mishra', NULL, NULL, '', NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
+('9905063', 'Masidur Rahaman', NULL, NULL, '', NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1999, 0, NULL, 3, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('headcse', 'Dr. Mohammad Mahfuzul Islam', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL),
 ('nazmul', 'Nazmul Haque', NULL, NULL, NULL, NULL, 1, NULL, NULL, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL);
 
@@ -2830,61 +2846,6 @@ INSERT INTO `users` (`username`, `password`, `created_at`, `updated_at`, `role`)
 ('9905063', '6b06f6e', '2016-01-04 05:34:37', '0000-00-00 00:00:00', 'user'),
 ('headcse', 'headcse', '2015-11-03 10:20:18', '0000-00-00 00:00:00', 'admin'),
 ('nazmul', 'nazmul321', '2015-11-03 10:20:18', '0000-00-00 00:00:00', 'admin');
-
---
--- Constraints for dumped tables
---
-  
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_users`()
-BEGIN
-        INSERT INTO users(username, PASSWORD)
-        SELECT student_id, SUBSTRING(SHA1(RAND()) FROM 2 FOR 7) AS PASSWORD FROM students WHERE student_id NOT IN (SELECT username FROM users);
-        UPDATE students SET u_university_admission_year= CONVERT(CONCAT(19,SUBSTR(student_id,1,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND student_id !='nazmul' AND LENGTH(student_id)<=7 AND CONVERT(SUBSTR(student_id,1,2), SIGNED INTEGER)>80;
-	UPDATE students SET u_university_admission_year= CONVERT(CONCAT(20,SUBSTR(student_id,1,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND student_id !='nazmul' AND LENGTH(student_id)<=7 AND CONVERT(SUBSTR(student_id,1,2), SIGNED INTEGER)<80;
-	UPDATE students SET p_university_admission_year= CONVERT(CONCAT(19,SUBSTR(student_id,3,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND student_id !='nazmul' AND LENGTH(student_id)>7 AND CONVERT(SUBSTR(student_id,3,2), SIGNED INTEGER)>80;
-	UPDATE students SET p_university_admission_year= CONVERT(CONCAT(20,SUBSTR(student_id,3,2)), SIGNED INTEGER) WHERE student_id !='headcse' AND student_id !='nazmul' AND LENGTH(student_id)>7 AND CONVERT(SUBSTR(student_id,3,2), SIGNED INTEGER)<80;
-    END$$
-
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Constraints for table `alumni_events`
---
-ALTER TABLE `alumni_events`
-  ADD CONSTRAINT `fk_user_events` FOREIGN KEY (`published_by`) REFERENCES `users` (`username`);
-
---
--- Constraints for table `alumni_news`
---
-ALTER TABLE `alumni_news`
-  ADD CONSTRAINT `fk_user_news` FOREIGN KEY (`published_by`) REFERENCES `users` (`username`);
-
---
--- Constraints for table `photo_gallery`
---
-ALTER TABLE `photo_gallery`
-  ADD CONSTRAINT `fk_user_photo_g` FOREIGN KEY (`upload_by`) REFERENCES `users` (`username`);
-
---
--- Constraints for table `students`
---
-ALTER TABLE `students`
-  ADD CONSTRAINT `fk_dist_stu` FOREIGN KEY (`district`) REFERENCES `district` (`district_id`);
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `fk_stu_user` FOREIGN KEY (`username`) REFERENCES `students` (`student_id`);
-  
-  
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

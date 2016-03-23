@@ -91,7 +91,7 @@
     -webkit-border-radius: 6px 6px 0 0;
     -moz-border-radius: 6px 6px 0 0;
     border-radius: 6px 6px 0 0;
-    color: #8d8d8d;
+    color: #c2c2c2;
   }
   nav ul li a.parent:after {
     content: '';

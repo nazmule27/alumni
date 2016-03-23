@@ -19,7 +19,7 @@ $this->load->view('common/navbar');
                         ?>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="passing_year">Select passing Year</label>
+                        <label for="passing_year">Select Passing Year</label>
                         <?php
                         $options=$p_years;
                         $selected = ($this->input->post('passing_year')) ? $this->input->post('passing_year') : 'All';

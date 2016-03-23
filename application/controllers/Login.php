@@ -20,7 +20,7 @@ class Login extends CI_Controller
                 ];
 
                 $this->session->set_userdata($data);
-                redirect('home');
+                redirect('view_profile');
             } else {
                 $this->session->set_flashdata('login_fail', 'Username or password is wrong!');
                 redirect('login');

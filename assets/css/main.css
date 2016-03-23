@@ -142,11 +142,11 @@ section{
 .navbar-inverse {
   background-color: #6a0505;
   border-color: #6a0505;
-  background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #6a0505 100%);
-  background-image:      -o-linear-gradient(top, #3c3c3c 0%, #6a0505 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#6a0505));
-  background-image:         linear-gradient(to bottom, #3c3c3c 0%, #6a0505 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#6a0505', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #1a0002 0%, #6a0505 100%);
+  background-image:      -o-linear-gradient(top, #1a0002 0%, #6a0505 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1a0002), to(#6a0505));
+  background-image:         linear-gradient(to bottom, #1a0002 0%, #6a0505 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a0002', endColorstr='#6a0505', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
 }
@@ -225,7 +225,7 @@ section{
 	text-align: right;
 }
 .left-half2 {
-	width: 16%;
+	width: 30%;
 	float: left;
 	text-align: left;
 }
@@ -422,7 +422,7 @@ footer {
 }
 .cse-flag {
     position: absolute;
-    left: 1px;
+    right: 1px;
     top: 75px;
     width: 70px;
     height: 70px;
@@ -452,7 +452,6 @@ footer {
 .form-control option {
     padding: 8px 5px;
 }
-
 
 
 
@@ -618,7 +617,9 @@ height: 10px;
     box-shadow: 0px 0px 12px 1px rgba(22,17,17,0.66);
 }
 /*End Developer CSS*/
-
+.light-green {
+	background: #dff0d8;
+}
 @media (min-width: 550px) {
 
 }
@@ -638,7 +639,6 @@ height: 10px;
 }
 }
 
-
 @media (max-width: 1200px) {
 
 }
@@ -647,7 +647,7 @@ height: 10px;
 		margin-top: 30px;
 	}
 	.left-half2 {
-		width: 30%;
+		width: 40%;
 	}
     .navbar-brand .logo {
         width: 156px;
@@ -658,7 +658,7 @@ height: 10px;
 }
 @media (max-width: 768px) {
 	.left-half2 {
-		width: 40%;
+		width: 50%;
 	}
     .cse-flag {
         display: none;

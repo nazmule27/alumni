@@ -44,9 +44,9 @@ class Request extends CI_Controller
 
     function emailSend($email_receiver, $user_id, $password){
         $name = 'Alumni- CSE, BUET';
-        $from_email = 'alumni.cse.buet@gmail.com';
+        $from_email = 'alumni@ugrad.cse.buet.ac.bd';
         $subject = 'Request Password';
-        $link='<a href="http://172.16.101.5/alumni/login">alumni login</a>';
+        $link='<a href="http://cse.buet.ac.bd/alumni/login">alumni login</a>';
         $message = 'Dear User, <br> Your User ID: '.$user_id.' and password: '.$password.'<br>For new signin go to '.$link;
 
         //set to_email id to which you want to receive mails
@@ -56,8 +56,8 @@ class Request extends CI_Controller
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.gmail.com';
         $config['smtp_port'] = '465';
-        $config['smtp_user'] = 'alumni.cse.buet@gmail.com';
-        $config['smtp_pass'] = 'nazmulAlumni';
+        $config['smtp_user'] = 'alumni@ugrad.cse.buet.ac.bd';
+        $config['smtp_pass'] = 'alumni1alumni';
         $config['mailtype'] = 'html';
         $config['charset'] = 'iso-8859-1';
         $config['wordwrap'] = TRUE;
@@ -72,11 +72,7 @@ class Request extends CI_Controller
         $this->email->message($message);
         if ($this->email->send())
         {
-            print 'OK! Email sent.';
-        }
-        else
-        {
-            print 'Error! Email sending fail.';
+            return false;
         }
     }
 

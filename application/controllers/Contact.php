@@ -33,14 +33,14 @@ class Contact extends CI_Controller
             $message = $this->input->post('message');
 
             //set to_email id to which you want to receive mails
-            $to_email = 'alumni.cse.buet@gmail.com';
+            $to_email = 'alumni@ugrad.cse.buet.ac.bd';
 
             //configure email settings
             $config['protocol'] = 'smtp';
             $config['smtp_host'] = 'ssl://smtp.gmail.com';
             $config['smtp_port'] = '465';
-            $config['smtp_user'] = 'alumni.cse.buet@gmail.com';
-            $config['smtp_pass'] = 'nazmulAlumni';
+            $config['smtp_user'] = 'alumni@ugrad.cse.buet.ac.bd';
+            $config['smtp_pass'] = 'alumni1alumni';
             $config['mailtype'] = 'html';
             $config['charset'] = 'iso-8859-1';
             $config['wordwrap'] = TRUE;

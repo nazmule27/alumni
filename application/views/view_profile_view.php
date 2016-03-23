@@ -9,7 +9,21 @@ else
 ?>
 <div class="container paddingT75">
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
+        <div id="sidebar" class="col-lg-3 col-md-4 col-sm-5 sidebar-offcanvas">
+            <div class="panel panel-success">
+                <div class="panel-heading"><strong><i class="glyphicon glyphicon-user"></i> My Profile</strong></div>
+                <div class="panel-body light-green">
+                    <p><a href="<?=base_url();?>view_profile"><i class="glyphicon glyphicon-search"></i> <b>View Profile</b></a></p>
+                    <p><a href="<?=base_url();?>edit_profile/password"><i class="glyphicon glyphicon-pencil"></i> Change Password</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/index"><i class="glyphicon glyphicon-pencil"></i> Edit Personal</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/education"><i class="glyphicon glyphicon-pencil"></i> Edit Education</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/biography"><i class="glyphicon glyphicon-pencil"></i> Edit Biography</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/employment"><i class="glyphicon glyphicon-pencil"></i> Edit Employment</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/photograph"><i class="glyphicon glyphicon-pencil"></i> Edit Photograph</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-7">
             <div class="row>">
                 <div class="profileCon">
                     <img class="profile-img2" src="<?=base_url();?>assets/img/profile/<?php echo $profileImage;?>">
