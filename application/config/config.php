@@ -17,9 +17,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://172.16.101.5/alumni/';
+//$config['base_url'] = 'http://172.16.101.5/alumni/';
 //$config['base_url'] = 'http://cse.buet.ac.bd/alumni/';
-//$config['base_url'] = 'http://localhost/alumni/';
+$config['base_url'] = 'http://localhost/alumni/';
 /*
 |--------------------------------------------------------------------------
 | Index File
